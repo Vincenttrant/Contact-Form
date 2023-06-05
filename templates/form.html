@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% block title %}Contacts Form{% endblock %}
+
+{% block content%}
+{% if error_form %}
+<label>
+  <input type="checkbox" class="alertCheckbox" autocomplete="off" />
+  <div class="alert error">
+    <span class="alertClose">X</span>
+    <span class="alertText">{{error_form}}
+  </div>
+</label>
+{% endif %}
+<div class="title">
+  <h1>Contact Me Here . . .</h1>
+  <p>Share your opinion I would love to hear from you</p>
+</div>
+<div class="main-body">
+  <div class="main-body-left">
+    <form action="/" method="POST" class="form">
+      <div class="form-top">
+        <div class="form-input">
+          <span>Name</span>
+          <input type="text" name="name" value="{{name}}" placeholder="Enter your name" />
+        </div>
+        <div class="form-input">
+          <span>Email</span>
+          <input type="text" name="email" value="{{email}}" placeholder="Enter your email" />
+        </div>
+      </div>
+      <div class="form-bot">
+        <div class="form-subject">
+          <span>Subject</span>
+          <input type="text" name="subject" value="{{subject}}" placeholder="Enter your subject" />
+        </div>
+        <div class="form-message">
+          <span>Message</span>
+          <textarea rows="5" name="message" value="{{message}}" placeholder="Enter your message"></textarea>
+        </div>
+        <button type="submit">Submit</button>
+      </div>
+    </form>
+  </div>
+  <div class="main-body-right">
+    <span><i class="fa-solid fa-envelope"></i>youremail.com</span>
+    <span><i class="fa-solid fa-location-dot"></i>Dallas, TX</span>
+    <span><i class="fa-brands fa-linkedin"></i><a href="#" target="_blank">Linkedin</a></span>
+    <span><i class="fa-brands fa-github"></i><a href="#" target="_blank">Github</a></span>
+  </div>
+</div>
+
+{% endblock %}

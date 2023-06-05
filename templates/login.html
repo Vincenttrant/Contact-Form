@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% block title %}Log In{% endblock %} 
+
+{% block content%}
+{% if error_login %}
+<label>
+  <input type="checkbox" class="alertCheckbox" autocomplete="off" />
+  <div class="alert error">
+    <span class="alertClose">X</span>
+    <span class="alertText">{{error_login}}
+  </div>
+</label>
+{% endif %}
+<div class="title">
+  <h1>Admin</h1>
+  <p>Log In</p>
+</div>
+<div class="main-body-login">
+  <form action="/login" method="POST" class="login">
+    <div class="form-login">
+    <span>Username</span>
+    <input
+      type="text"
+      id="username"
+      name="username"
+      placeholder="Enter your username"
+    />
+    <span>Password</span>
+    <input
+      type="password"
+      id="password"
+      name="password"
+      placeholder="Enter your password"
+    />
+    <button type="submit">Submit</button>
+  </div>
+  </form>
+</div>
+{% endblock %}

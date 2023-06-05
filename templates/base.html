@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/style.css') }}"
+    />
+    <title>{% block title %}{% endblock %}</title>
+  </head>
+  <body>
+    <div class="container">
+      <nav>
+        <h2><a href="http://127.0.0.1:5000/">Vincent Tran</a></h2>
+        <span><a href="http://127.0.0.1:5000/login">Log In</a></span>
+        <span><a href="http://127.0.0.1:5000/logout">Log Out</a></span>
+      </nav>
+      {% block content %}{% endblock %}
+    </div>
+  </body>
+</html>
